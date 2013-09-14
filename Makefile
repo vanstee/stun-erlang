@@ -1,14 +1,20 @@
 REBAR = ./rebar
 
-.PHONY: all compile test clean
+.PHONY: all compile deps clean distclean test
 
-all: compile
+all: deps compile
 
-compile:
+compile: deps
 	@$(REBAR) compile
 
-test: compile
-	@$(REBAR) eunit
+deps:
+	@$(REBAR) get-deps
 
 clean:
 	@$(REBAR) clean
+
+distclean: clean
+	@$(REBAR) delete-deps
+
+test: all
+	@$(REBAR) skip_deps=true eunit
