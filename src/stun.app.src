@@ -1,0 +1,6 @@
+{application, stun, [
+  {description, ""},
+  {vsn, "1"},
+  {registered, [stun]},
+  {applications, [kernel, stdlib]}
+]}.
