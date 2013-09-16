@@ -1,0 +1,3 @@
+-define(PORT, 19302).
+-define(SERVER, "stun.l.google.com").
+-define(MAX_RESPONSE_LENGTH, 548).
